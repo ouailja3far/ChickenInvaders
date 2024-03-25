@@ -3,12 +3,24 @@
 #include "bullet.h"
 #include <QGraphicsScene>
 #include <QDebug>
+#include <QMessageBox>
 #include "enemy.h"
+#include <QPixmap>
 Player::Player() {
+    QPixmap pixmap1(":/new/prefix1/Assets/player.png");
+    pixmap1 = pixmap1.scaledToWidth(100);
+    pixmap1 = pixmap1.scaledToHeight(100);
+    setPixmap(pixmap1);
 
 }
 
+// setPlainText(QString(“The message “you want to display”) +
+//              QString::number(The_name_of_the_variable));
+
+
+
 void Player::keyPressEvent(QKeyEvent *event)
+
 {
         // *******  Event Handling for the Player ********
     if(event->key()== Qt::Key_Left)
